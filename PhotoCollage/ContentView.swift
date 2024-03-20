@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  PhotoCollage
-//
-//  Created by Ragesh on 3/19/24.
-//
 
 import SwiftUI
 
