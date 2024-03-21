@@ -2,7 +2,7 @@
 //  SingleCardView.swift
 //  PhotoCollage
 //
-//  Created by Ragesh on 3/20/24.
+//  Created by Fahim on 3/20/24.
 //
 
 import SwiftUI
@@ -14,6 +14,13 @@ struct SingleCardView: View {
     var body: some View {
         NavigationStack {
             Color.yellow
+                .sheet(item: $currentModal){ item in
+                    switch item{
+                    default:
+                        Text(String(describing: item))
+                    }
+
+                }
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button("Done") {
