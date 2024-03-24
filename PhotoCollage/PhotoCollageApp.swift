@@ -4,7 +4,7 @@ import SwiftUI
 struct PhotoCollageApp: App {
     var body: some Scene {
         WindowGroup {
-            CardListView()
+            ResizableView()
         }
     }
 }

@@ -18,6 +18,7 @@
 		2446401F2BAB86C300792190 /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446401E2BAB86C300792190 /* BottomToolbar.swift */; };
 		244640232BAE455200792190 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640222BAE455200792190 /* ResizableView.swift */; };
 		2446402A2BAE496F00792190 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640292BAE496F00792190 /* Transform.swift */; };
+		2446402C2BAF87BA00792190 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446402B2BAF87BA00792190 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		2446401E2BAB86C300792190 /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
 		244640222BAE455200792190 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		244640292BAE496F00792190 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		2446402B2BAF87BA00792190 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				244640292BAE496F00792190 /* Transform.swift */,
+				2446402B2BAF87BA00792190 /* Operators.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244640192BAB58AC00792190 /* CardThumbnail.swift in Sources */,
+				2446402C2BAF87BA00792190 /* Operators.swift in Sources */,
 				2446400B2BA9C00800792190 /* ContentView.swift in Sources */,
 				244640232BAE455200792190 /* ResizableView.swift in Sources */,
 				244640172BAB51C700792190 /* CardListView.swift in Sources */,
