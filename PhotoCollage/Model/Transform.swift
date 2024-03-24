@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Transform {
-    var size:CGSize = CGSize(width: 250, height: 180)
+    var size:CGSize = CGSize(width: Settings.defaultElementSize.width, height: Settings.thumbnailSize.height)
     var rotation:Angle = .zero
     var offset:CGSize = .zero
 
