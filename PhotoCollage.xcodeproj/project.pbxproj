@@ -21,6 +21,7 @@
 		2446402C2BAF87BA00792190 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446402B2BAF87BA00792190 /* Operators.swift */; };
 		2446402F2BB0AE0C00792190 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446402E2BB0AE0C00792190 /* Settings.swift */; };
 		244640322BB0B25400792190 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640312BB0B25400792190 /* ColorExtensions.swift */; };
+		244640342BB2E8E200792190 /* CardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640332BB2E8E200792190 /* CardToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		2446402B2BAF87BA00792190 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		2446402E2BB0AE0C00792190 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		244640312BB0B25400792190 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		244640332BB2E8E200792190 /* CardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				2446401E2BAB86C300792190 /* BottomToolbar.swift */,
 				2446401A2BAB595300792190 /* SingleCardView.swift */,
 				2446401C2BAB680700792190 /* ToolbarSelection.swift */,
+				244640332BB2E8E200792190 /* CardToolbar.swift */,
 			);
 			path = "Single Card Views";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				244640192BAB58AC00792190 /* CardThumbnail.swift in Sources */,
 				2446402C2BAF87BA00792190 /* Operators.swift in Sources */,
+				244640342BB2E8E200792190 /* CardToolbar.swift in Sources */,
 				2446400B2BA9C00800792190 /* ContentView.swift in Sources */,
 				244640232BAE455200792190 /* ResizableView.swift in Sources */,
 				244640172BAB51C700792190 /* CardListView.swift in Sources */,
