@@ -7,19 +7,22 @@
 import SwiftUI
 
 struct CardListView: View {
-    @State private var isPresented = false
+    @EnvironmentObject var store:CardStore
+    @State private var selectedCard:Card?
 
     var body: some View {
-        list.fullScreenCover(isPresented: $isPresented){
-            SingleCardView()
+        list.fullScreenCover(item: $selectedCard){ card in
+            if let index = store.index(for: card){
+                SingleCardView(card:$store.cards[index])
+            }
         }.scrollIndicators(.hidden)
     }
     var list: some View{
         ScrollView{
             VStack{
-                ForEach(0..<10){_ in
-                    CardThumbnail().onTapGesture {
-                        isPresented = true
+                ForEach(store.cards,id:\.self.id){ card in
+                    CardThumbnail(card:card).onTapGesture {
+                        selectedCard = card
                     }
                 }
             }
@@ -29,7 +32,7 @@ struct CardListView: View {
 
 struct CardListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardListView()
+        CardListView().environmentObject(CardStore(defaultData: true))
     }
 }
 
