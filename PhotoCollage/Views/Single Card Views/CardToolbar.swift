@@ -15,6 +15,8 @@ struct CardToolbar: ViewModifier{
         content
             .sheet(item: $currentModal){ item in
                 switch item{
+                case .stickerModal:
+                    StickerModal()
                 default:
                     Text(String(describing: item))
                 }

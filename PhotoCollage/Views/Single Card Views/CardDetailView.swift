@@ -16,7 +16,7 @@ struct CardDetailView: View {
             ForEach($card.elements,id: \.id){
                 $element in
                 CardElementView(element: element)
-                    .resizableView()
+                    .resizableView(transform: $element.transform)
                     .frame(width: element.transform.size.width,
                            height: element.transform.size.height)
 
@@ -26,6 +26,15 @@ struct CardDetailView: View {
 }
 
 struct CardDetailView_Previews: PreviewProvider {
+    struct CardDetailPreview: View{
+        @EnvironmentObject var store:CardStore
+        var body: some View{
+            CardDetailView(card: $store.cards[0])
+        }
+
+
+    }
+
     static var previews: some View {
         CardDetailView(card: .constant(initialCards[0]))
             .environmentObject(CardStore(defaultData: true))
