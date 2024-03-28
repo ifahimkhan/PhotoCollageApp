@@ -8,15 +8,51 @@
 import SwiftUI
 
 struct StickerModal: View {
+
+    @State private var stickerNames:[String] = []
     var body: some View {
-        if let resourcePath = Bundle.main.resourcePath,
-           let image = UIImage(named: resourcePath+"/Stickers/Camping/fire.png"){
-            Image(uiImage: image)
-        }else{
-            EmptyView()
+        ScrollView{
+            LazyVStack {
+                ForEach(stickerNames,id: \.self){
+                    sticker in
+                    Image(uiImage: image(from: sticker))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+        }.onAppear{
+            stickerNames = StickerModal.loadStickers()
         }
     }
-    
+    static func loadStickers() -> [String]{
+
+        var themes:Array<URL> = []
+        var stickersName:[String] = []
+
+        let fileManager = FileManager.default
+        if let resourcePath = Bundle.main.resourcePath,
+           let enumerator = fileManager.enumerator(at:URL(fileURLWithPath: resourcePath+"/Stickers"),includingPropertiesForKeys: nil,options: [.skipsSubdirectoryDescendants,.skipsHiddenFiles]){
+
+            for case let url as URL in enumerator where url.hasDirectoryPath{
+                themes.append(url)
+            }
+        }
+        for theme in themes {
+            if let files = try?
+                fileManager.contentsOfDirectory(atPath: theme.path){
+                for file in files{
+                    stickersName.append(theme.path+"/"+file)
+                }
+            }
+        }
+
+        return stickersName
+    }
+    func image(from path: String) -> UIImage{
+
+        print("loading "+path)
+        return UIImage(named: path) ?? UIImage(named: "error-image")!
+    }
 }
 
 struct StickerModal_Previews: PreviewProvider {
