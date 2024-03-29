@@ -9,14 +9,21 @@ import SwiftUI
 
 struct CardToolbar: ViewModifier{
     @Environment(\.dismiss) var dismiss
-    
     @Binding var currentModal: ToolbarSelection?
+    @Binding var card:Card
+    @State private var stickerImage:UIImage?
     func body(content: Content) -> some View {
         content
             .sheet(item: $currentModal){ item in
                 switch item{
                 case .stickerModal:
-                    StickerModal()
+                    StickerModal(stickerImage: $stickerImage)
+                        .onDisappear{
+                            if let stickerImage = stickerImage{
+                                card.addElement(uiImage: stickerImage)
+                            }
+                            stickerImage = nil
+                        }
                 default:
                     Text(String(describing: item))
                 }
@@ -36,8 +43,8 @@ struct CardToolbar: ViewModifier{
     
 }
 extension View {
-    func cardToolbar(currentModal: Binding<ToolbarSelection?>) -> some View {
-        modifier(CardToolbar(currentModal: currentModal))
+    func cardToolbar(currentModal: Binding<ToolbarSelection?>, card:Binding<Card>) -> some View {
+        modifier(CardToolbar(currentModal: currentModal,card: card))
     }
 }
 

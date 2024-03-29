@@ -2,7 +2,7 @@
 //  StickerModal.swift
 //  PhotoCollage
 //
-//  Created by Ragesh on 3/28/24.
+//  Created by Fahim on 3/28/24.
 //
 
 import SwiftUI
@@ -10,6 +10,8 @@ import SwiftUI
 struct StickerModal: View {
 
     @State private var stickerNames:[String] = []
+    @Binding var stickerImage:UIImage?
+    @Environment(\.dismiss) var dismiss
     let columns = [
         GridItem(.adaptive(minimum:120),spacing: 10),
         GridItem(.adaptive(minimum:120),spacing: 10),
@@ -24,7 +26,10 @@ struct StickerModal: View {
                     Image(uiImage: image(from: sticker))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                    
+                        .onTapGesture {
+                            stickerImage = image(from: sticker)
+                            dismiss()
+                        }
                 }
             }
         }.onAppear{
@@ -64,6 +69,6 @@ struct StickerModal: View {
 
 struct StickerModal_Previews: PreviewProvider {
     static var previews: some View {
-        StickerModal()
+        StickerModal(stickerImage: .constant(UIImage()))
     }
 }

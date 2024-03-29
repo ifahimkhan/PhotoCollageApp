@@ -5,7 +5,28 @@
       "idiom" : "universal"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "launch-screen-dark.svg",
+      "idiom" : "universal"
+    },
+    {
       "filename" : "launch-screen-landscape-light.svg",
+      "height-class" : "compact",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "launch-screen-landscape-dark.svg",
       "height-class" : "compact",
       "idiom" : "universal"
     }
