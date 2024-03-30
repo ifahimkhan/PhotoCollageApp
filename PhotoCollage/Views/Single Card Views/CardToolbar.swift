@@ -16,7 +16,7 @@ struct CardToolbar: ViewModifier{
         content
             .sheet(item: $currentModal){ item in
                 switch item{
-                
+
                 case .stickerModal:
                     StickerModal(stickerImage: $stickerImage)
                         .onDisappear{
@@ -39,9 +39,19 @@ struct CardToolbar: ViewModifier{
                 ToolbarItem(placement: .bottomBar){
                     BottomToolbar(modal: $currentModal,card: $card)
                 }
+                ToolbarItem(placement: .navigationBarLeading){
+                    PasteButton(payloadType: CustomTransfer.self){ data in
+                        Task{
+                            card.addElements(from: data )
+
+                        }
+                    }
+                    .labelStyle(.iconOnly)
+                    .buttonBorderShape(.capsule)
+                }
             }
     }
-    
+
 }
 extension View {
     func cardToolbar(currentModal: Binding<ToolbarSelection?>, card:Binding<Card>) -> some View {
