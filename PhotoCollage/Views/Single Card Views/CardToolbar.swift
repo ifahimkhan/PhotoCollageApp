@@ -12,6 +12,37 @@ struct CardToolbar: ViewModifier{
     @Binding var currentModal: ToolbarSelection?
     @Binding var card:Card
     @State private var stickerImage:UIImage?
+    var menu: some View {
+      // 1
+      Menu {
+        Button {
+            Task {
+                if UIPasteboard.general.hasImages {
+                    if let images = UIPasteboard.general.images {
+                        for image in images {
+                            card.addElement(uiImage: image)
+                        }
+                    }
+                } else if UIPasteboard.general.hasStrings {
+                    if let strings = UIPasteboard.general.strings {
+                        for text in strings {
+                            card.addElement(text: TextElement(text: text))
+                        }
+                    }
+                }
+            }
+
+
+        } label: {
+          Label("Paste", systemImage: "doc.on.clipboard")
+        }
+    // 2
+        .disabled(!UIPasteboard.general.hasImages
+          && !UIPasteboard.general.hasStrings)
+    } label: {
+        Label("Add", systemImage: "ellipsis.circle")
+      }
+    }
     func body(content: Content) -> some View {
         content
             .sheet(item: $currentModal){ item in
@@ -39,16 +70,20 @@ struct CardToolbar: ViewModifier{
                 ToolbarItem(placement: .bottomBar){
                     BottomToolbar(modal: $currentModal,card: $card)
                 }
-                ToolbarItem(placement: .navigationBarLeading){
-                    PasteButton(payloadType: CustomTransfer.self){ data in
-                        Task{
-                            card.addElements(from: data )
-
-                        }
-                    }
-                    .labelStyle(.iconOnly)
-                    .buttonBorderShape(.capsule)
+                ToolbarItem(placement: .navigationBarTrailing){
+                    menu
                 }
+                /*ToolbarItem(placement: .navigationBarLeading){
+                 PasteButton(payloadType: CustomTransfer.self){ data in
+                 Task{
+                 card.addElements(from: data )
+
+
+                 }
+                 }
+                 .labelStyle(.iconOnly)
+                 .buttonBorderShape(.capsule)
+                 }*/
             }
     }
 
