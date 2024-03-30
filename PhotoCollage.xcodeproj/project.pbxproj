@@ -31,6 +31,7 @@
 		244640442BB3771700792190 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640432BB3771700792190 /* CardElementView.swift */; };
 		2446404B2BB5E83800792190 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 2446404A2BB5E83800792190 /* Stickers */; };
 		2446404E2BB5E8D700792190 /* StickerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446404D2BB5E8D700792190 /* StickerModal.swift */; };
+		244640502BB8075800792190 /* PhotosModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446404F2BB8075800792190 /* PhotosModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		244640452BB5D68400792190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2446404A2BB5E83800792190 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../../../Downloads/suia-materials-editions-2.0/16-adding-assets-to-your-app/assets/Stickers"; sourceTree = "<group>"; };
 		2446404D2BB5E8D700792190 /* StickerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerModal.swift; sourceTree = "<group>"; };
+		2446404F2BB8075800792190 /* PhotosModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2446404D2BB5E8D700792190 /* StickerModal.swift */,
+				2446404F2BB8075800792190 /* PhotosModal.swift */,
 			);
 			path = "Card Model View";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				2446402F2BB0AE0C00792190 /* Settings.swift in Sources */,
 				244640402BB31AC700792190 /* CardStore.swift in Sources */,
 				244640092BA9C00800792190 /* CardsApp.swift in Sources */,
+				244640502BB8075800792190 /* PhotosModal.swift in Sources */,
 				244640322BB0B25400792190 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

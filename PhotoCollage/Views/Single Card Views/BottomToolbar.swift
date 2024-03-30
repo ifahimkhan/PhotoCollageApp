@@ -28,14 +28,22 @@ struct ToolbarButton: View {
 }
 struct BottomToolbar: View {
     @Binding var modal: ToolbarSelection?
+    @Binding var card:Card
     var body: some View {
         HStack{
             ForEach(ToolbarSelection.allCases) { selection in
-                Button(action: {
+                switch selection {
+                case .photoModal:
+                    Button {
+                    }label: {
+                        PhotosModal(card: $card)
+                    }
+                default: Button(action: {
                     modal = selection
                 }, label: {
                     ToolbarButton(modal: selection)
             })
+                }
             }
         }
 
@@ -45,6 +53,6 @@ struct BottomToolbar: View {
 
 struct BottomToolbar_Previews: PreviewProvider {
     static var previews: some View {
-        BottomToolbar(modal: .constant(.stickerModal))
+        BottomToolbar(modal: .constant(.stickerModal),card: .constant(Card()))
     }
 }

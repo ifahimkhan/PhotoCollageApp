@@ -16,6 +16,7 @@ struct CardToolbar: ViewModifier{
         content
             .sheet(item: $currentModal){ item in
                 switch item{
+                
                 case .stickerModal:
                     StickerModal(stickerImage: $stickerImage)
                         .onDisappear{
@@ -36,7 +37,7 @@ struct CardToolbar: ViewModifier{
                     }
                 }
                 ToolbarItem(placement: .bottomBar){
-                    BottomToolbar(modal: $currentModal)
+                    BottomToolbar(modal: $currentModal,card: $card)
                 }
             }
     }
