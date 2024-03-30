@@ -32,6 +32,8 @@
 		2446404B2BB5E83800792190 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 2446404A2BB5E83800792190 /* Stickers */; };
 		2446404E2BB5E8D700792190 /* StickerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446404D2BB5E8D700792190 /* StickerModal.swift */; };
 		244640502BB8075800792190 /* PhotosModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446404F2BB8075800792190 /* PhotosModal.swift */; };
+		244640522BB8298000792190 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640512BB8298000792190 /* UIImageExtensions.swift */; };
+		244640542BB8992E00792190 /* CustomTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640532BB8992E00792190 /* CustomTransfer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		2446404A2BB5E83800792190 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../../../Downloads/suia-materials-editions-2.0/16-adding-assets-to-your-app/assets/Stickers"; sourceTree = "<group>"; };
 		2446404D2BB5E8D700792190 /* StickerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerModal.swift; sourceTree = "<group>"; };
 		2446404F2BB8075800792190 /* PhotosModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModal.swift; sourceTree = "<group>"; };
+		244640512BB8298000792190 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		244640532BB8992E00792190 /* CustomTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransfer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				2446403B2BB319FC00792190 /* CardElement.swift */,
 				2446403D2BB31A5A00792190 /* Card.swift */,
 				2446403F2BB31AC700792190 /* CardStore.swift */,
+				244640532BB8992E00792190 /* CustomTransfer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			children = (
 				244640312BB0B25400792190 /* ColorExtensions.swift */,
 				244640352BB2FF8500792190 /* TextExtensions.swift */,
+				244640512BB8298000792190 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				2446402C2BAF87BA00792190 /* Operators.swift in Sources */,
 				244640342BB2E8E200792190 /* CardToolbar.swift in Sources */,
 				2446400B2BA9C00800792190 /* ContentView.swift in Sources */,
+				244640522BB8298000792190 /* UIImageExtensions.swift in Sources */,
 				244640232BAE455200792190 /* ResizableView.swift in Sources */,
 				2446403E2BB31A5A00792190 /* Card.swift in Sources */,
 				244640382BB2FFCC00792190 /* PreviewData.swift in Sources */,
@@ -273,6 +280,7 @@
 				244640092BA9C00800792190 /* CardsApp.swift in Sources */,
 				244640502BB8075800792190 /* PhotosModal.swift in Sources */,
 				244640322BB0B25400792190 /* ColorExtensions.swift in Sources */,
+				244640542BB8992E00792190 /* CustomTransfer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

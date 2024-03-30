@@ -21,6 +21,13 @@ struct CardDetailView: View {
                            height: element.transform.size.height)
 
             }
+        }.dropDestination(for:CustomTransfer.self){
+            customTransfer, location in
+            print("location: \(location)")
+            Task{
+                card.addElements(from: customTransfer)
+            }
+            return !customTransfer.isEmpty
         }
     }
 }
