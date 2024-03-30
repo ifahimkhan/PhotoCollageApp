@@ -34,6 +34,7 @@
 		244640502BB8075800792190 /* PhotosModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446404F2BB8075800792190 /* PhotosModal.swift */; };
 		244640522BB8298000792190 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640512BB8298000792190 /* UIImageExtensions.swift */; };
 		244640542BB8992E00792190 /* CustomTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640532BB8992E00792190 /* CustomTransfer.swift */; };
+		244640562BB8B73F00792190 /* ElementContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640552BB8B73F00792190 /* ElementContextMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		2446404F2BB8075800792190 /* PhotosModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModal.swift; sourceTree = "<group>"; };
 		244640512BB8298000792190 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		244640532BB8992E00792190 /* CustomTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransfer.swift; sourceTree = "<group>"; };
+		244640552BB8B73F00792190 /* ElementContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContextMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				244640332BB2E8E200792190 /* CardToolbar.swift */,
 				244640412BB3738400792190 /* CardDetailView.swift */,
 				244640432BB3771700792190 /* CardElementView.swift */,
+				244640552BB8B73F00792190 /* ElementContextMenu.swift */,
 			);
 			path = "Single Card Views";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				244640522BB8298000792190 /* UIImageExtensions.swift in Sources */,
 				244640232BAE455200792190 /* ResizableView.swift in Sources */,
 				2446403E2BB31A5A00792190 /* Card.swift in Sources */,
+				244640562BB8B73F00792190 /* ElementContextMenu.swift in Sources */,
 				244640382BB2FFCC00792190 /* PreviewData.swift in Sources */,
 				244640172BAB51C700792190 /* CardListView.swift in Sources */,
 				2446401B2BAB595300792190 /* SingleCardView.swift in Sources */,
