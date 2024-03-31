@@ -21,7 +21,13 @@ struct CardListView: View {
         ScrollView{
             VStack{
                 ForEach(store.cards,id:\.self.id){ card in
-                    CardThumbnail(card:card).onTapGesture {
+                    CardThumbnail(card:card).contextMenu{
+                        Button(role:.destructive){
+                            store.remove(for: card)
+                        }label: {
+                            Label("Delete",systemImage: "trash")
+                        }
+                    }.onTapGesture {
                         selectedCard = card
                     }
                 }

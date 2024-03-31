@@ -19,5 +19,11 @@ class CardStore: ObservableObject{
     func index(for card: Card) -> Int? {
         cards.firstIndex{$0.id == card.id}
     }
+
+    func remove(for card:Card){
+        if let index = index(for: card){
+            cards.remove(at: index)
+        }
+    }
     
 }
