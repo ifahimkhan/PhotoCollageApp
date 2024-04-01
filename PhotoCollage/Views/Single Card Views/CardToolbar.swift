@@ -12,6 +12,10 @@ struct CardToolbar: ViewModifier{
     @Binding var currentModal: ToolbarSelection?
     @Binding var card:Card
     @State private var stickerImage:UIImage?
+
+    @EnvironmentObject var store:CardStore
+    @State private var frameIndex: Int?
+
     var menu: some View {
       // 1
       Menu {
@@ -47,6 +51,14 @@ struct CardToolbar: ViewModifier{
         content
             .sheet(item: $currentModal){ item in
                 switch item{
+                case .frameModal:
+                    FrameModal(frameIndex: $frameIndex)
+                        .onDisappear{
+                            if let frameIndex {
+                                card.update(store.selectedElement,frameIndex:frameIndex)
+                            }
+                            frameIndex = nil
+                        }
 
                 case .stickerModal:
                     StickerModal(stickerImage: $stickerImage)

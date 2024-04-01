@@ -31,6 +31,14 @@ struct Card:Identifiable{
             } else if let image = element.image {
                 addElement(uiImage: image)
             }
+        }
+    }
+    mutating func update(_ element: CardElement?, frameIndex: Int) {
+        if let element = element as? ImageElement,
+           let index = element.index(in: elements) {
+            var newElement = element
+            newElement.frameIndex = frameIndex
+            elements[index] = newElement
         } }
 
 }

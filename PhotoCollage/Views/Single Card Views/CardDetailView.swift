@@ -21,7 +21,7 @@ struct CardDetailView: View {
                     .border(
                         Settings.borderColor,
                         width: isSelected(element) ? Settings.borderWidth : 0)
-                
+
                     .onTapGesture{
                         store.selectedElement = element
                     }
@@ -56,10 +56,10 @@ struct CardDetailView_Previews: PreviewProvider {
         var body: some View{
             CardDetailView(card: $store.cards[0])
         }
-        
-        
+
+
     }
-    
+
     static var previews: some View {
         CardDetailView(card: .constant(initialCards[0]))
             .environmentObject(CardStore(defaultData: true))

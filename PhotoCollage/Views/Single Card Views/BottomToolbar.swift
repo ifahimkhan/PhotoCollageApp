@@ -29,6 +29,8 @@ struct ToolbarButton: View {
 struct BottomToolbar: View {
     @Binding var modal: ToolbarSelection?
     @Binding var card:Card
+    @EnvironmentObject var store: CardStore
+
     var body: some View {
         HStack{
             ForEach(ToolbarSelection.allCases) { selection in
@@ -38,21 +40,29 @@ struct BottomToolbar: View {
                     }label: {
                         PhotosModal(card: $card)
                     }
-                default: Button(action: {
-                    modal = selection
-                }, label: {
-                    ToolbarButton(modal: selection)
-            })
+                case .frameModal:
+                    defaultButton(selection)
+                        .disabled(store.selectedElement == nil || !(store.selectedElement is ImageElement))
+                default: defaultButton(selection)
                 }
             }
         }
 
 
     }
+
+    func defaultButton(_ selection:ToolbarSelection) -> some View{
+        Button(action: {
+            modal = selection
+        }, label: {
+            ToolbarButton(modal: selection)
+        })
+    }
 }
 
 struct BottomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         BottomToolbar(modal: .constant(.stickerModal),card: .constant(Card()))
+            .environmentObject(CardStore())
     }
 }

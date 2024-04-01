@@ -27,6 +27,7 @@ struct ImageElement: CardElement{
         Image(uiImage: self.uiImage ?? UIImage(named: "error-Image")!)
     }
     var uiImage:UIImage?
+    var frameIndex: Int?
 }
 
 struct TextElement:CardElement {
