@@ -36,6 +36,7 @@
 		244640542BB8992E00792190 /* CustomTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640532BB8992E00792190 /* CustomTransfer.swift */; };
 		244640562BB8B73F00792190 /* ElementContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640552BB8B73F00792190 /* ElementContextMenu.swift */; };
 		244640582BB8EC1C00792190 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640572BB8EC1C00792190 /* Shapes.swift */; };
+		2446405A2BBA110400792190 /* FrameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640592BBA110400792190 /* FrameModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		244640532BB8992E00792190 /* CustomTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransfer.swift; sourceTree = "<group>"; };
 		244640552BB8B73F00792190 /* ElementContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContextMenu.swift; sourceTree = "<group>"; };
 		244640572BB8EC1C00792190 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		244640592BBA110400792190 /* FrameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				2446404D2BB5E8D700792190 /* StickerModal.swift */,
 				2446404F2BB8075800792190 /* PhotosModal.swift */,
+				244640592BBA110400792190 /* FrameModal.swift */,
 			);
 			path = "Card Model View";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				2446404E2BB5E8D700792190 /* StickerModal.swift in Sources */,
 				244640192BAB58AC00792190 /* CardThumbnail.swift in Sources */,
 				2446402C2BAF87BA00792190 /* Operators.swift in Sources */,
+				2446405A2BBA110400792190 /* FrameModal.swift in Sources */,
 				244640342BB2E8E200792190 /* CardToolbar.swift in Sources */,
 				244640582BB8EC1C00792190 /* Shapes.swift in Sources */,
 				2446400B2BA9C00800792190 /* ContentView.swift in Sources */,
