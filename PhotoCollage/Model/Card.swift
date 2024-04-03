@@ -39,6 +39,10 @@ struct Card:Identifiable{
             var newElement = element
             newElement.frameIndex = frameIndex
             elements[index] = newElement
-        } }
+        }
+    }
+    func save() {
+     print("Saving data")
+   }
 
 }

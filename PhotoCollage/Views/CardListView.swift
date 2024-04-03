@@ -9,11 +9,18 @@ import SwiftUI
 struct CardListView: View {
     @EnvironmentObject var store:CardStore
     @State private var selectedCard:Card?
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         list.fullScreenCover(item: $selectedCard){ card in
             if let index = store.index(for: card){
                 SingleCardView(card:$store.cards[index])
+                    .onChange(of: scenePhase){newScenePhase in
+                        if newScenePhase == .inactive{
+                            store.cards[index].save()
+                        }
+
+                    }
             }
         }.scrollIndicators(.hidden)
     }
