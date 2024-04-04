@@ -7,7 +7,13 @@ struct CardsApp: App {
     var body: some Scene {
         WindowGroup {
             CardListView()
+                .onAppear {
+                    print(URL.documentsDirectory)
+                }
                 .environmentObject(store)
         }
     }
 }
+
+
+

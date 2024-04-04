@@ -13,13 +13,17 @@ struct Card:Identifiable{
     var elements: [CardElement] = []
 
     mutating func addElement(uiImage: UIImage){
-        let element:CardElement = ImageElement(uiImage:uiImage)
+        let imageFileName = uiImage.save()
+        let element:CardElement = ImageElement(uiImage:uiImage,imageFileName: imageFileName)
         elements.append(element)
     }
     mutating func addElement(text: TextElement) {
         elements.append(text)
     }
     mutating func remove(_ element: CardElement) {
+        if let element = element as? ImageElement{
+            UIImage.remove(name: element.imageFileName)
+        }
         if let index = element.index(in: elements) {
             elements.remove(at: index)
         }

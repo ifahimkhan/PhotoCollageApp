@@ -28,6 +28,7 @@ struct ImageElement: CardElement{
     }
     var uiImage:UIImage?
     var frameIndex: Int?
+    var imageFileName: String?
 }
 
 struct TextElement:CardElement {

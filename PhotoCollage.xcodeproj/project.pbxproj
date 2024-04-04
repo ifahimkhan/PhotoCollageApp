@@ -37,6 +37,7 @@
 		244640562BB8B73F00792190 /* ElementContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640552BB8B73F00792190 /* ElementContextMenu.swift */; };
 		244640582BB8EC1C00792190 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640572BB8EC1C00792190 /* Shapes.swift */; };
 		2446405A2BBA110400792190 /* FrameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640592BBA110400792190 /* FrameModal.swift */; };
+		2446405C2BBE099700792190 /* AngleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446405B2BBE099600792190 /* AngleExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		244640552BB8B73F00792190 /* ElementContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContextMenu.swift; sourceTree = "<group>"; };
 		244640572BB8EC1C00792190 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		244640592BBA110400792190 /* FrameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModal.swift; sourceTree = "<group>"; };
+		2446405B2BBE099600792190 /* AngleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				244640312BB0B25400792190 /* ColorExtensions.swift */,
 				244640352BB2FF8500792190 /* TextExtensions.swift */,
 				244640512BB8298000792190 /* UIImageExtensions.swift */,
+				2446405B2BBE099600792190 /* AngleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				244640502BB8075800792190 /* PhotosModal.swift in Sources */,
 				244640322BB0B25400792190 /* ColorExtensions.swift in Sources */,
 				244640542BB8992E00792190 /* CustomTransfer.swift in Sources */,
+				2446405C2BBE099700792190 /* AngleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
