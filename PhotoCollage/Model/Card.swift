@@ -47,6 +47,15 @@ struct Card:Identifiable{
     }
     func save() {
         print("Saving data")
+        do{
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(self)
+            let filename = "\(id).rwcard"
+            let url = URL.documentsDirectory.appendingPathComponent(filename)
+            try data.write(to: url)
+        }catch{
+            print(error.localizedDescription)
+        }
     }
 
 }
@@ -60,10 +69,12 @@ extension Card: Codable{
         self.id = UUID(uuidString: id) ?? UUID()
     }
     func encode(to encoder: Encoder) throws {
-      var container = encoder.container(keyedBy: CodingKeys.self)
-      try container.encode(id.uuidString, forKey: .id)
-      let imageElements: [ImageElement] =
-        elements.compactMap { $0 as? ImageElement }
-      try container.encode(imageElements, forKey: .imageElements)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id.uuidString, forKey: .id)
+        let imageElements: [ImageElement] =
+        elements.compactMap { element in
+            element as? ImageElement
+        }
+        try container.encode(imageElements, forKey: .imageElements)
     }
 }

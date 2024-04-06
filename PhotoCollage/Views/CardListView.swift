@@ -38,6 +38,9 @@ struct CardListView: View {
                         selectedCard = card
                     }
                 }
+                Button("Add") {
+                 selectedCard = store.addCard()
+               }
             }
         }
     }
