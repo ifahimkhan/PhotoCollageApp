@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Card:Identifiable{
-    let id = UUID()
+    var id = UUID()
     var backgroundColor:Color = .yellow
     var elements: [CardElement] = []
 
@@ -46,7 +46,24 @@ struct Card:Identifiable{
         }
     }
     func save() {
-     print("Saving data")
-   }
+        print("Saving data")
+    }
 
+}
+extension Card: Codable{
+    enum CodingKeys:CodingKey{
+        case id, backgroundColor, imageElements, textElements
+    }
+    init(from decoder: Decoder) throws {
+        var container  = try decoder.container(keyedBy: CodingKeys.self)
+        let id = try container.decode(String.self, forKey: .id)
+        self.id = UUID(uuidString: id) ?? UUID()
+    }
+    func encode(to encoder: Encoder) throws {
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      try container.encode(id.uuidString, forKey: .id)
+      let imageElements: [ImageElement] =
+        elements.compactMap { $0 as? ImageElement }
+      try container.encode(imageElements, forKey: .imageElements)
+    }
 }

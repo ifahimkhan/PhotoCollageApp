@@ -38,3 +38,31 @@ struct TextElement:CardElement {
     var textColor = Color.black
     var textFont = "Gill Sans"
 }
+extension ImageElement: Codable{
+    enum CodingKeys: CodingKey {
+        case transform, imageFilename, frameIndex
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder
+            .container(keyedBy: CodingKeys.self)
+        transform = try container
+            .decode(Transform.self, forKey: .transform)
+        frameIndex = try container
+            .decodeIfPresent(Int.self, forKey: .frameIndex)
+        imageFileName = try container.decodeIfPresent(
+              String.self,
+              forKey: .imageFilename)
+            if let imageFileName {
+              uiImage = UIImage.load(uuidString: imageFileName)
+            } else {
+              uiImage = UIImage.errorImage
+            }
+
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(transform, forKey: .transform)
+        try container.encode(frameIndex, forKey: .frameIndex)
+        try container.encode(imageFileName, forKey: .imageFilename)
+    }
+}
