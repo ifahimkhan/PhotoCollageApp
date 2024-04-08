@@ -15,6 +15,7 @@ struct CardToolbar: ViewModifier{
 
     @EnvironmentObject var store:CardStore
     @State private var frameIndex: Int?
+    @State private var textElement = TextElement()
 
     var menu: some View {
       // 1
@@ -67,6 +68,14 @@ struct CardToolbar: ViewModifier{
                                 card.addElement(uiImage: stickerImage)
                             }
                             stickerImage = nil
+                        }
+                case .textModal:
+                    TextModal(textElement: $textElement)
+                        .onDisappear{
+                            if !textElement.text.isEmpty{
+                                card.addElement(text: textElement)
+                            }
+                            textElement = TextElement()
                         }
                 default:
                     Text(String(describing: item))

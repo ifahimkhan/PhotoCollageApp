@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242EB6492BC487C40021A142 /* TextModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EB6482BC487C40021A142 /* TextModal.swift */; };
 		244640092BA9C00800792190 /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244640082BA9C00800792190 /* CardsApp.swift */; };
 		2446400B2BA9C00800792190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446400A2BA9C00800792190 /* ContentView.swift */; };
 		2446400D2BA9C01000792190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2446400C2BA9C01000792190 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242EB6482BC487C40021A142 /* TextModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModal.swift; sourceTree = "<group>"; };
 		244640052BA9C00800792190 /* PhotoCollage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		244640082BA9C00800792190 /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		2446400A2BA9C00800792190 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				2446404D2BB5E8D700792190 /* StickerModal.swift */,
 				2446404F2BB8075800792190 /* PhotosModal.swift */,
 				244640592BBA110400792190 /* FrameModal.swift */,
+				242EB6482BC487C40021A142 /* TextModal.swift */,
 			);
 			path = "Card Model View";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				244640522BB8298000792190 /* UIImageExtensions.swift in Sources */,
 				244640232BAE455200792190 /* ResizableView.swift in Sources */,
 				2446403E2BB31A5A00792190 /* Card.swift in Sources */,
+				242EB6492BC487C40021A142 /* TextModal.swift in Sources */,
 				244640562BB8B73F00792190 /* ElementContextMenu.swift in Sources */,
 				244640382BB2FFCC00792190 /* PreviewData.swift in Sources */,
 				244640172BAB51C700792190 /* CardListView.swift in Sources */,
