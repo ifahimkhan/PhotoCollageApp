@@ -7,13 +7,22 @@
 
 import SwiftUI
 extension Color {
-  static let colors: [Color] = [
-    .green, .red, .blue, .gray, .yellow, .pink, .orange, .purple
+  static let randomColors: [Color] = [
+    Color("random1"),
+    Color("random2"),
+    Color("random3"),
+    Color("random4"),
+    Color("random5"),
+    Color("random6"),
+    Color("random7"),
+    Color("random8")
   ]
-    static func random() -> Color{
-        colors.randomElement() ?? .black
-    }
+
+  static func random() -> Color {
+    randomColors.randomElement() ?? .black
+  }
 }
+
 extension Color {
   func colorComponents() -> [CGFloat] {
     let uiColor = UIColor(self)
@@ -39,3 +48,4 @@ extension Color {
     return Color(uiColor)
   }
 }
+
