@@ -13,6 +13,7 @@ struct ResizableView: ViewModifier {
     @State private var previousOffset:CGSize = .zero
     @State private var previousRotation:Angle = .zero
     @State private var scale:CGFloat = 1.0
+    let viewScale:CGFloat
 
 
 
@@ -65,8 +66,8 @@ struct ResizableView: ViewModifier {
 }
 
 extension View{
-    func resizableView(transform: Binding<Transform>) -> some View{
-        modifier(ResizableView(transform: transform))
+    func resizableView(transform: Binding<Transform>,viewScale:CGFloat = 1.0) -> some View{
+        modifier(ResizableView(transform: transform,viewScale: viewScale))
     }
 }
 

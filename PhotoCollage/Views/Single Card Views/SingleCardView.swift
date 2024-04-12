@@ -13,10 +13,18 @@ struct SingleCardView: View {
     
     var body: some View {
         NavigationStack {
-            CardDetailView(card: $card)
-                .cardToolbar(currentModal: $currentModal,card: $card).onDisappear{
-                    card.save()
-                }
+            GeometryReader { proxy in
+                CardDetailView(card: $card,viewScale: Settings.calculateScale(proxy.size),proxy: proxy)
+                    .frame(
+                        width: Settings.calculateSize(proxy.size).width,
+                        height: Settings.calculateSize(proxy.size).height)
+                    .clipped()
+                    .frame(maxWidth: .infinity,maxHeight: .infinity)
+                    .scaleEffect(0.8)
+                    .cardToolbar(currentModal: $currentModal,card: $card).onDisappear{
+                        card.save()
+                    }
+            }
         }
     }
 

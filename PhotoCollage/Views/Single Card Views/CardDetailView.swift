@@ -10,6 +10,8 @@ import SwiftUI
 struct CardDetailView: View {
     @EnvironmentObject var store:CardStore
     @Binding var card:Card
+    var viewScale: CGFloat = 1
+    var proxy:GeometryProxy?
     var body: some View {
         ZStack {
             card.backgroundColor.onTapGesture {
@@ -25,7 +27,7 @@ struct CardDetailView: View {
                     .elementContextMenu(
                         card: $card,
                         element: $element)
-                    .resizableView(transform: $element.transform)
+                    .resizableView(transform: $element.transform,viewScale: viewScale)
                     .frame(
                         width: element.transform.size.width,
                         height: element.transform.size.height)
@@ -36,8 +38,9 @@ struct CardDetailView: View {
         }.dropDestination(for:CustomTransfer.self){
             customTransfer, location in
             print("location: \(location)")
+            let offset = Settings.calculateDropOffset(proxy: proxy, location: location)
             Task{
-                card.addElements(from: customTransfer)
+                card.addElements(from: customTransfer,at: offset)
             }
             return !customTransfer.isEmpty
         }
