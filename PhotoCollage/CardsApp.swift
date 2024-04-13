@@ -5,7 +5,7 @@ struct CardsApp: App {
     @StateObject var store = CardStore(defaultData: false)
     var body: some Scene {
         WindowGroup {
-            CardsListView()
+            AppLoadingView()
                 .onAppear {
                     print(URL.documentsDirectory)
                 }

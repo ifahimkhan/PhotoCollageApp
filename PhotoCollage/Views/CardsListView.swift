@@ -84,7 +84,7 @@ struct CardsListView: View {
                     CardThumbnail(card: card)
                         .contextMenu {
                             Button(role: .destructive) {
-                                //store.remove(card)
+                                store.remove(for: card)
                             } label: {
                                 Label("Delete", systemImage: "trash")
                             }
