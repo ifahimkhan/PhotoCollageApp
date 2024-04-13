@@ -18,7 +18,8 @@ struct SplashScreen: View {
                 .splashAnimation(finalYposition: 120, delay: 0.2)
             card(letter: "R", color: "appColor3")
                 .splashAnimation(finalYposition: 0, delay: 0.4)
-            card(letter: "A", color: "appColor6").splashAnimation(finalYposition: -120, delay: 0.6)
+            card(letter: "A", color:"appColor6")
+                .splashAnimation(finalYposition: -120, delay: 0.6)
             card(letter: "C", color: "appColor7")
                 .splashAnimation(finalYposition: -240, delay: 0.8)
         }
@@ -49,21 +50,21 @@ private struct SplashAnimation: ViewModifier {
     let delay: Double
 
     let animation = Animation.interpolatingSpring(
-      mass: 0.2,
-      stiffness: 80,
-      damping: 5,
-      initialVelocity: 0.0)
+        mass: 0.2,
+        stiffness: 80,
+        damping: 5,
+        initialVelocity: 0.0)
 
     func body(content: Content) -> some View {
         content
             .offset(y: animating ? -700 : finalYPosition)
             .rotationEffect(
-             animating ? .zero
-               : Angle(degrees: Double.random(in: -10...10)))
+                animating ? .zero
+                : Angle(degrees: Double.random(in: -10...10)))
 
             .animation(animation.delay(delay), value: animating)
             .onAppear {
-                    animating = false
+                animating = false
             }
     }
 }

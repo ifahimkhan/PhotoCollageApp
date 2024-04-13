@@ -11,10 +11,19 @@ struct AppLoadingView: View {
     @State private var showSplash:Bool = true
     var body: some View {
         if showSplash{
-            SplashScreen().ignoresSafeArea()
+            SplashScreen().ignoresSafeArea().onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
+                    withAnimation{
+                        showSplash = false
+                    }
+                }
+            }
             
         }else{
             CardsListView()
+                .transition(.slide)
+                //.transition(.asymmetric(insertion: .slide, removal:.scale))
+                //.transition(.scale(scale: 0, anchor: .top))
         }
     }
 }
