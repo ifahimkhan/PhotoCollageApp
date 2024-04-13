@@ -88,6 +88,19 @@ struct CardToolbar: ViewModifier{
                         dismiss()
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    let uiImage = UIImage.screenshot(
+                        card: card,
+                        size: Settings.cardSize)
+                    let image = Image(uiImage: uiImage)
+                    ShareLink(
+                      item: image,
+                      preview: SharePreview(
+                        "Card",
+                        image: image)) {
+                          Image(systemName: "square.and.arrow.up")
+                    }
+                }
                 ToolbarItem(placement: .bottomBar){
                     BottomToolbar(modal: $currentModal,card: $card)
                 }

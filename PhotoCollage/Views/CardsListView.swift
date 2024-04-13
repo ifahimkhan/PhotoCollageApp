@@ -13,6 +13,8 @@ struct CardsListView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @State private var selectedCard: Card?
 
+    @State private var listState = ListState.list
+
     var thumbnailSize: CGSize {
         var scale: CGFloat = 1
         if verticalSizeClass == .regular,
@@ -31,11 +33,19 @@ struct CardsListView: View {
 
     var body: some View {
         VStack {
+            ListSelection(listState: $listState)
             Group {
                 if store.cards.isEmpty {
                     initialView
                 } else {
-                    list
+                    Group {
+                      switch listState {
+                      case .list:
+                        list
+                      case .carousel:
+                        Carousel(selectedCard: $selectedCard)
+                      }
+                    }
                 }
             }
             .fullScreenCover(item: $selectedCard) { card in
