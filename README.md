@@ -18,6 +18,8 @@
     <li>Add text to cards.</li>
     <li>Drag, copy, paste, scale, and rotate elements.</li>
     <li>Save cards in files.</li>
+    <li>Swift UI animations for enhanced user experience.</li>
+    <li>Saving data within the app for persistent storage.</li>
   </ul>
     <h2>Screenshots</h2>
 <div style="display: flex; flex-wrap: wrap;">
